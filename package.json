@@ -4,14 +4,15 @@
   "description": "API de sorteio construída para demo em TecWeb - PUC Minas 2020",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon app/index.js"
   },
   "keywords": [],
   "author": "Pedro Paim, Rellyson Silva",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.2.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
