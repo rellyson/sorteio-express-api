@@ -1,3 +1,5 @@
+const { getRepository } = require("typeorm");
+const RaffleModel = require('./model/RaffleModel').Raffle;
 const getRaffle = async (request) => {
     console.log(request);
     const { id } = request.headers;
