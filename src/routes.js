@@ -8,7 +8,7 @@ modulo.exports = [{
   },
   {
     method: "POST",
-    path: "/doRaffle",
+    path: "/makeRaffle",
     options: {
       handler: Raffle.makeRaffle
     }
