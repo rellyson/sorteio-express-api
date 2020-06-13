@@ -1,7 +1,7 @@
 // importing libraries,routing and dependencies
 const express = require('express');
 const routes = require('./routes/main.js');
-const bodyParser = require('body-parser');
+
 // postgres database connection
 require('./config/database.js');
 
@@ -12,7 +12,6 @@ const port = process.env.PORT || 3000;
 app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.json({ type: 'application/vnd.api+json' }));
 
 // importing routes to server
 app.use(routes);
