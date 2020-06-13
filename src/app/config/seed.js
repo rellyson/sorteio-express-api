@@ -12,7 +12,7 @@ const pool = new Pool({
 //promise to create database if not exists
 pool
   .query("CREATE DATABASE sorteio")
-  .catch((e) => console.log(e.stack));
+  .catch((e) => console.log('database already exists'));
 
 //creating a pool in the new database
 const sorteio_pool = new Pool({
