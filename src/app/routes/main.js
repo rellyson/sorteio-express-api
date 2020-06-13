@@ -21,19 +21,19 @@ router.get('/listCandidateById', async (req, res) => {
 router.post("/insertCandidate", async (req, res) => {
     const { first_name,last_name, email } = req.body
     const { rows } = await db.query('INSERT INTO candidates(first_name, last_name, email) VALUES ($1, $2,$3)', [first_name, last_name, email])
-    res.send(rows[0]);
+    res.send('candidate inserted successfully!');
 });
 
 router.post("/removeCandidate", async (req, res) => {
     const { first_name,last_name } = req.body
     const { rows } = await db.query('DELETE FROM candidates WHERE first_name=$1 AND last_name=$2', [first_name, last_name])
-    res.send(rows);
+    res.send('candidate removed successfully!');
 });
 
 router.patch("/updateCandidate", async (req, res) => {
     const { id,first_name,last_name, email } = req.body
     const { rows } = await db.query('UPDATE candidates SET first_name=$2, last_name=$3, email=$4 WHERE id=$1', [id,first_name,last_name, email])
-    res.send(rows);
+    res.send('candidate updated successfully!');
 });
 
 router.get("/sortCandidate", async (req, res) => {

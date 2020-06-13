@@ -9,5 +9,9 @@
 # starting database from a docker hub image
 docker run --name sorteio_db --publish 5432:5432 -e POSTGRES_PASSWORD=ZTJmMzhlYmFhOWJjZjQ0 -d postgres
 
+# installing dependecies
+
+npm install
+
 # starting express server
 npm start
