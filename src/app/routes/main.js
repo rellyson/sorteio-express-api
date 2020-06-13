@@ -21,7 +21,7 @@ router.get('/listCandidate', async (req, res) => {
     const { id } = req.body
     const { rows } = await db.query('SELECT * FROM candidates WHERE id = $1', [id])
     res.send(rows[0])
-  })
+  });
 
 router.post("/insertCandidate", async (req, res) => {
     const { first_name,last_name, email } = req.body
@@ -29,10 +29,23 @@ router.post("/insertCandidate", async (req, res) => {
     res.send(rows[0]);
 });
 
-router.delete("/removeCandidate", async (req, res) => {
+router.post("/removeCandidate", async (req, res) => {
     const { first_name,last_name } = req.body
     const { rows } = await db.query('DELETE FROM candidates WHERE first_name=$1 AND last_name=$2', [first_name, last_name])
     res.send(rows);
 });
 
+router.get("/sortCandidate", async (req, res) => {
+    const { rows } = await db.query('SELECT COUNT(id) FROM candidates');
+    const min = 1;
+    const candidates = rows[0]["count"];
+    if(candidates > 1){  
+        const random = Math.floor(Math.random() * (candidates - min +1) + min);
+        res.send(`Sorted id is:${random}`);
+    }
+    else{
+        res.send(`Sorted id is: 1`);
+    }
+
+});
 module.exports = router;
