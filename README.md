@@ -57,7 +57,7 @@ Utilizando ferramentas como postman e insomnia, este são os endpoints da aplica
 - updateCandidate
     - Atualiza o cadastro de um candidato do banco de dados
     - É necessário passar first_name, last_name e email como corpo da requisição
-    - Retorna status 200 e uma mensagem caso o usuário tenha sido cadaremovido com sucesso
+    - Retorna status 200 e uma mensagem caso o usuário tenha sido removido com sucesso
 
 - sortCandidate
     - Sorteia o candidato registrado no banco de dados
